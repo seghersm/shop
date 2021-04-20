@@ -11,7 +11,6 @@ public class Variant {
   String price;
   String sku;
   String option1;
-  String option2;
   int inventory_quantity;
    // "weight": 1.25,
     //    "weight_unit": "lb",

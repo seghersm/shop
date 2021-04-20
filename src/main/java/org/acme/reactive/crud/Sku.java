@@ -37,6 +37,7 @@ public class Sku {
 
   public String getSize(String sizeUnit) {
     return size.stream().filter(s -> sizeUnit.equals(s.getSizeStandard())).findFirst()
-        .map(s -> s.getSizeDetail().getMeasurement()).orElse(null);
+        .map(s -> s.getSizeDetail().getMeasurement() + (s.getSizeDetail().getCup() != null ? s
+            .getSizeDetail().getCup() : "")).orElse(null);
   }
 }
