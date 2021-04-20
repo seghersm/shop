@@ -57,6 +57,17 @@ public class ProductResource {
   }
 
   @GET
+  @Path("/stock/{sku}")
+  public SkuStock getStock(@PathParam String sku) {
+    SkuStock stock = eservicesClient.getStock(customer,sku);
+    CompletableFuture.runAsync(() -> {
+      //TODO
+      // shopifyClient.updateStock(stock);
+    });
+    return stock;
+  }
+
+  @GET
   @Path("/sync/{brand}/{season}")
   public void sync(@PathParam String brand, @PathParam String season) {
     CompletableFuture.runAsync(() -> doSync(brand, season));

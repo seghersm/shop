@@ -3,7 +3,6 @@ package org.acme.eservices.client;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import org.acme.eservices.client.model.CreateProductRequest;
-import org.acme.eservices.client.model.ShopifyProduct;
 import org.eclipse.microprofile.rest.client.annotation.RegisterProvider;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
@@ -16,4 +15,6 @@ public interface ShopifyClient {
   @Path("/")
   void createProduct(CreateProductRequest product);
 
+  // TODO
+  // void updateStock(SkuStock stock);
 }
